@@ -1,0 +1,93 @@
+<html>
+
+    <head>
+        <title>
+            Assignment Edit
+        </title>
+    </head>
+    <body>
+        <select value="Option"><option value="SPEEDGRADER">SpeedGrader</option></select>
+
+        <hr>
+        <h3>Assignment Name</h3>
+        <input placeholder="A1 - ENV + HTML"/>
+        <p></p>
+        
+        <form id="textarea">
+            <textarea cols="20" rows="2">This is the assignment description.</textarea>
+        </form>
+
+        <label for="text-fields-points">Points</label><br>
+            <input id="text-fields-points" placeholder="100"/><br/>
+        <br>
+        <label for="assignment-group-dropdown">Assignment Group</label><br>
+        <select value="Assignments"><option value="ASSIGNMENTS">Assignments</option></select>
+        <p></p>
+
+        <label for="select-one-grade"> Display Grade as</label><br/>
+        <select id="select-one-grade">
+        <option value="PERCENTAGE">Percentage</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="select-one-submission"> Submission Type</label><br/>
+                <select id="select-one-submission">
+                <option value="ONLINE">Online</option>
+                </select>
+        <br>
+        <br>
+        <label>Online Entry Options</label> <br>
+        <input type="checkbox" value="Text Entry"
+                name="check-option" id="chkbox-text-entry">
+          <label for="chkbox-text-entry">Text Entry</label>    <br/>
+          
+          <input type="checkbox" value="Website URL"
+                name="check-option" id="chkbox-website"/>
+          <label for="chkbox-website">Website URL</label>    <br/>
+          
+          <input type="checkbox" value="MEDIA"
+                name="check-option" id="chkbox-media" >
+          <label for="chkbox-media">Media Recordings</label> <br/>
+          
+          <input type="checkbox" value="STUDENT"
+                name="check-option" id="chkbox-student"/>
+          <label for="chkbox-student">Student Annotation</label> <br/>
+          <input type="checkbox" value="UPLOADS"
+                name="check-option" id="chkbox-uploads"/>
+          <label for="chkbox-uploads">File Uploads</label>
+        <br>
+        <br>
+          <label for="text-fields-assign">Assign <br> Assign to</label><br>
+            <input id="text-fields-assign" placeholder="Everyone"/><br/>
+        <br>
+
+        <label>Due</label>
+        <br>
+        <input type="date"
+            id="text-fields-due"
+            value="2021-01-01"/><br/> 
+        <br>
+        <label>Available from</label>
+        <br>
+        <input type="date"
+            id="text-fields-from"
+            value="2021-01-01"/><br/> 
+
+        <br>
+        <label>Until</label>
+        <br>
+        <input type="date"
+            id="text-fields-until"
+            value="2021-01-01"/><br/>
+        <br>
+        <button type="submit">Cancel</button>
+        <button type="Save">Save</button>
+
+
+
+
+
+    </body>
+
+</html>
