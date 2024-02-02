@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../../../libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../../Kanbas/styles.css" />
+    <link rel="stylesheet" href="../../../Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="../../../Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="../../../Kanbas/Courses/Modules/index.css" />
+
+    <link rel="stylesheet" href="../../../Kanbas/Courses/Home/index.css" />
+  </head>
+  <body>
+    <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-flex">
+      <div class="d-none d-md-block">
+        <ul class="wd-kanbas-navigation">
+            <li><a href="http://northeastern.edu">N</a></li>
+            <li><a href="/Kanbas/Account/Navigation/index.html">
+               Account</a></li>
+            <li class="wd-active">
+             <a href="/Kanbas/Dashboard/screen.html">
+             <i class="fa fa-tachometer"></i>Dashboard</a>
+            </li>
+            <li>
+             <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+            </li>
+            <li>
+             <a href="#"><i class="fa fa-calendar"></i>Calendar</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Commons</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+      <div class="d-none d-md-block">
+        <ul class="wd-navigation">
+            <li class="wd-active">
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+              <li>
+                <a href="../Kanbas/Courses/Modules/screen.html">Modules</a>
+              </li>
+              <li><a href="http://piazza.com">Piazza</a></li>
+              <li><a href="#">Zoom</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+              </li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+              <li><a href="#">People</a></li>
+            </ul>
+        </ul>
+      </div>
+      <div class="flex-fill">
+        <ul class="list-group wd-modules">
+            <div>
+                <button class="btn" id="expand_collapse_all" >Collapse All</button>
+                <button class="btn" id="view_progress">View Progress</button>
+                <button type="button" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"></path>
+                        </svg>
+                        Publish All
+                      </button>  
+                </button>
+            
+                <button class="red-button">Module</button>
+                <button class="ellipsis-button">
+                    <i class="fa fa-ellipsis-v"></i> 
+                </button>
+                
+                  </div>
+                <ul class="list-group wd-modules">
+                  <li class="list-group-item">
+                    <div>
+                        
+                      <i class="fa fa-ellipsis-v"></i> Week 1
+                      <span class="float-end">
+                        <i class="fa fa-check-circle text-success"></i>
+                        <i class="fa fa-plus ms-2"></i>
+                        <i class="fa fa-ellipsis-v ms-2"></i>
+                      </span>
+                    </div>
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <i class="fa fa-ellipsis-v"></i>
+                        
+                        <span class="float-end">
+                          <i class="fa fa-check-circle text-success"></i>
+                          <i class="fa fa-ellipsis-v ms-2"></i>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="list-group-item">
+                    <div>
+                      <i class="fa fa-ellipsis-v"></i> Week 2
+                      <span class="float-end">
+                        <i class="fa fa-check-circle text-success"></i>
+                        <i class="fa fa-plus ms-2"></i>
+                        <i class="fa fa-ellipsis-v ms-2"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+            
+        </ul>
+      </div>
+      <div class="flex-grow-0 me-2 d-none d-lg-block" style="width: 250px">
+        <h3>Course Status</h3>
+        <button type="submit">Unpublish</button>
+        <button type="submit">Published</button>
+        <ul>
+            <li><a href="#">Import Existing Content</a></li>
+            <li><a href="#">Import From Commons</a></li>
+            <li><a href="#">Choose Home Page</a></li>
+            <li><a href="#">View Course Stream</a></li>
+            <li><a href="#">New Announcement</a></li>
+            <li><a href="#">New Analytics</a></li>
+            <li><a href="#">View Course Notifications</a></li>
+        </ul>
+        <h2>Coming Up</h2>
+        <a href="#">View Calendar</a>
+        <ul>
+            <li><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
+            <li><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
+            <li><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
