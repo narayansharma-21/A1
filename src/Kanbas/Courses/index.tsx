@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Routes, Route, Navigate } from "react-router-dom";
+import { useParams, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import courses from "../Database/courses.json";
 import ModuleList from "./Modules/List";
 import CourseNavigation from "./Navigation";
@@ -12,10 +12,24 @@ import Assignments from "./Assignments";
 function Courses() {
   const { cid } = useParams();
   const course = courses.find((course) => course._id === cid);
+  let modulesBreadcrumb = null;
+  const location = useLocation();
+  const parts = location.pathname.split('/');
+  const lastPart = parts[parts.length - 1];
 
+  if (lastPart === 'Modules') {
+    modulesBreadcrumb = <h2 style={{ color: 'black', margin: '0', marginLeft:'15px' }}>Modules</h2>
+  }
+  console.log(lastPart)
+  
   return (
     <>
-     <h1><HiMiniBars3 /> Course {course?.name}</h1>
+   <div style={{ display: 'flex', alignItems: 'center' }}>
+        <HiMiniBars3 style={{ marginRight: '5px' }} />
+        <h2 style={{ color: 'red', margin: '0' }}>{course?.name}</h2>
+        {modulesBreadcrumb}
+      </div>
+      <hr/>
       <CourseNavigation />
       <div>
         <div

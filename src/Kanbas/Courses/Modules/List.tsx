@@ -11,7 +11,16 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <>
-      {/* <!-- Add buttons here --> */}
+       <button className="btn btn-light" style={{ backgroundColor: '#e2e2e2' }}>Collapse All</button>
+            <button className="btn btn-light" style={{ backgroundColor: '#e2e2e2' }}>View Progress</button>
+            <select className="btn btn-light" style={{ backgroundColor: '#e2e2e2' }}>
+              <option>Publish All</option>
+              <option>Publish All Modules and Items</option>
+              <option>Publish Modules Only</option>
+              <option>Unpublish All</option>
+            </select>
+            <button className="btn btn-light" style={{ backgroundColor: '#e2e2e2' }}>Module</button> 
+             <ul className="list-group wd-modules"></ul>
       <ul className="list-group wd-modules">
         {modulesList.map((module) => (
           <li
