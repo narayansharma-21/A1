@@ -1,52 +1,39 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import { courses } from "../Database";
 
+interface Course {
+    _id: string; name: string; number: string;
+    startDate: Date; endDate: Date;
+    image: string
+  
 
-function Dashboard() {
+}
 
-  const [cs, setCourses] = useState(courses);
+// eslint-disable-next-line no-use-before-define
+function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCourse,  updateCourse }: {
+    courses: Course[]; // Specify the type as an array of Course objects   
+    course: Course | null; // Example of a single course object or null  
+    setCourse: (course: Course | null) => void; // Example of a function that sets a course or null  
+    addNewCourse: (newCourse: Course) => void; // Example of a function that adds a new course 
+    deleteCourse: (id: number) => void; // Example of a function that deletes a course by id 
+    updateCourse: (id: number, updatedCourse: Course) => void; // Example of a function that updates a course 
+  }) {
 
-  const [c, setCourse] = useState({
-    _id: "0", name: "New Course", number: "New Number",
-    startDate: "2023-09-10", endDate: "2023-12-15",
-    image: "/images/reactjs.jpg"
-  });
-  const addNewCourse = () => {
-    const newCourse = { ...c,
-                        _id: new Date().getTime().toString() };
-    setCourses([...courses, { ...c, ...newCourse }]);
-  };
-
-  const deleteCourse = (courseId: string) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };
-
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === c._id) {
-          return c;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
+ console.log(courses);
 
 
   return (
     <div className="p-4">
       <h1>Dashboard</h1>              <hr />
       <h5>Course</h5>
-      <input value={c.name} className="form-control"
-             onChange={(e) => setCourse({ ...c, name: e.target.value }) } />
-      <input value={c.number} className="form-control"
-             onChange={(e) => setCourse({ ...c, number: e.target.value }) } />
-      <input value={c.startDate} className="form-control" type="date"
-             onChange={(e) => setCourse({ ...c, startDate: e.target.value }) }/>
-      <input value={c.endDate} className="form-control" type="date"
-             onChange={(e) => setCourse({ ...c, endDate: e.target.value }) } />
+      <input value={course != null ? course.name : ""} className="form-control"
+             onChange={(e) => setCourse({...course, name: e.target.value }) } />
+      <input value={course.number} className="form-control"
+             onChange={(e) => setCourse({ ...course, number: e.target.value }) } />
+      <input value={course.startDate} className="form-control" type="date"
+             onChange={(e) => setCourse({ ...course, startDate: e.target.value }) }/>
+      <input value={course.endDate} className="form-control" type="date"
+             onChange={(e) => setCourse({ ...course, endDate: e.target.value }) } />
       <button onClick={addNewCourse} >
         Add
       </button>
@@ -55,7 +42,7 @@ function Dashboard() {
       <h2>Published Courses ({courses.length})</h2> <hr />
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
-          {cs.map((course) => (
+          {courses.map((course) => (
             <div key={course._id} className="col" style={{ width: 300 }}>
               <div className="card">
                 <img src={`images/${course.image}`} className="card-img-top" alt=""
