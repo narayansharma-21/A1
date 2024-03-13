@@ -1,22 +1,37 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-interface Course {
-    _id: string; name: string; number: string;
-    startDate: Date; endDate: Date;
-    image: string
-  
-
-}
 
 // eslint-disable-next-line no-use-before-define
 function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCourse,  updateCourse }: {
-    courses: Course[]; // Specify the type as an array of Course objects   
-    course: Course | null; // Example of a single course object or null  
-    setCourse: (course: Course | null) => void; // Example of a function that sets a course or null  
-    addNewCourse: (newCourse: Course) => void; // Example of a function that adds a new course 
-    deleteCourse: (id: number) => void; // Example of a function that deletes a course by id 
-    updateCourse: (id: number, updatedCourse: Course) => void; // Example of a function that updates a course 
+    courses: 
+    {_id: string;
+      name: string;
+      number: string;
+      startDate: string;
+      endDate: string;
+      image: string;
+    }[];
+    course: {
+      _id: string;
+      name: string;
+      number: string
+      startDate: string;
+      endDate: string;
+      image: string;
+    };
+    setCourse: (course: {
+      _id: string;
+      name: string;
+      number: string;
+      startDate: string;
+      endDate: string;
+      image: string;
+    }) => void;
+    addNewCourse: () => void;
+    deleteCourse: (id: string) => void;
+    updateCourse: () => void;
+   
   }) {
 
  console.log(courses);
@@ -26,7 +41,7 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
     <div className="p-4">
       <h1>Dashboard</h1>              <hr />
       <h5>Course</h5>
-      <input value={course != null ? course.name : ""} className="form-control"
+      <input value={course.name} className="form-control"
              onChange={(e) => setCourse({...course, name: e.target.value }) } />
       <input value={course.number} className="form-control"
              onChange={(e) => setCourse({ ...course, number: e.target.value }) } />
