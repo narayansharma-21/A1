@@ -71,7 +71,7 @@ const dispatch = useDispatch();
 
             <div className="container">
             <button
-              onClick={() => dispatch(deleteModule(module))}>
+              onClick={() => dispatch(deleteModule(module._id))}>
               Delete
             </button>
             </div>

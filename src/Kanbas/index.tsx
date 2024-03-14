@@ -33,8 +33,8 @@ function Kanbas() {
   const updateCourse = () => {
     setCourses(
       courses.map((c) => {
-        if (c._id === c._id) {
-          return c;
+        if (c._id === course._id) {
+          return course;
         } else {
           return c;
         }
