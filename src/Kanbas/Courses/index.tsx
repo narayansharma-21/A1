@@ -9,7 +9,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 
 
-function Courses() {
+function Courses({courses}: {courses: any[]; }) {
   const { cid } = useParams();
   const course = courses.find((course) => course._id === cid);
   let modulesBreadcrumb = null;

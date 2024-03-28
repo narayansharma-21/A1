@@ -2,10 +2,10 @@ import React from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import { assignments } from "../../Database";
+import  db  from "../../Database";
 function Assignments() {
   const { cid } = useParams();
-  const assignmentList = assignments.filter(
+  const assignmentList = db.assignments.filter(
     (assignment) => assignment.course === cid);
   return (
     <>
