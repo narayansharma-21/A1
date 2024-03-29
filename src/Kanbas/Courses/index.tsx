@@ -7,11 +7,26 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 function Courses({courses}: {courses: any[]; }) {
   const { cid } = useParams();
-  const course = courses.find((course) => course._id === cid);
+  const COURSES_API = "http://localhost:4000/api/courses";
+
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(cid);
+  }, [cid]);
+
+
   let modulesBreadcrumb = null;
   const location = useLocation();
   const parts = location.pathname.split('/');
