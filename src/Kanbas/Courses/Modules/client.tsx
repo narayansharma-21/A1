@@ -1,5 +1,5 @@
 import axios from "axios";
-const COURSES_API = "https://kanbas-node-server-app.onrender.com/api/courses";
+const COURSES_API = "https://kanbas-node-server-app-w3ko.onrender.com/api/courses";
 export const findModulesForCourse = async (courseId: any) => {
   const response = await axios
     .get(`${COURSES_API}/${courseId}/modules`);
@@ -14,7 +14,7 @@ export const createModule = async (courseId, module) => {
     return response.data;
   };
 
-const MODULES_API = "https://kanbas-node-server-app.onrender.com/api/modules";
+const MODULES_API = "https://kanbas-node-server-app-w3ko.onrender.com/api/modules";
 export const deleteModule = async (moduleId) => {
   const response = await axios
     .delete(`${MODULES_API}/${moduleId}`);
