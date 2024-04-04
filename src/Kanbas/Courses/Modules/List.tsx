@@ -48,8 +48,6 @@ const handleUpdateModule = async () => {
   const status = await client.updateModule(module);
   dispatch(updateModule(module));
 };
-
-
   return (
     <>
        <button className="btn btn-light" style={{ backgroundColor: '#e2e2e2' }}>Collapse All</button>
@@ -85,8 +83,7 @@ const handleUpdateModule = async () => {
         />
         </div>
       </li>
-
-        {modulesList
+        {Object.values(modulesList)
         .filter((module) => module.course === cid)
         .map((module, index) => (
           <li key={index} className="list-group-item">

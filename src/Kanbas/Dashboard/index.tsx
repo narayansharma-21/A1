@@ -33,10 +33,6 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
     updateCourse: () => void;
    
   }) {
-
- console.log(courses);
-
-
   return (
     <div className="p-4">
       <h1>Dashboard</h1>              <hr />
@@ -69,18 +65,20 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
                   
                   <Link className="list-group-item" to={`/Kanbas/Courses/${course.id}/Home`}>
                     {course.name}
-                    <button onClick={(event) => {
-                        event.preventDefault();
-                        deleteCourse(course.id);
-                      }}>
-                      Delete
-                   </button>
+                    <button
+                    onClick={(event) => {
+                      event.preventDefault();
+                      deleteCourse(course.id)}}
+                    className="btn btn-danger float-end"
+                  >
+                    Delete
+                  </button>
                    <button onClick={(event) => {
                 event.preventDefault();
                 setCourse(course);
-              }}>
-              Edit
-            </button>
+                  }}>
+                  Edit
+                </button>
 
                   </Link>
               
