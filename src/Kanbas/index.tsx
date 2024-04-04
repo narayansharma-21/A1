@@ -12,11 +12,14 @@ import axios from "axios";
 import Account from "./Account";
 
 
+export interface Course { id: string; name: string; number: string; startDate: Date;
+  endDate: Date, image: string };
 
 function Kanbas() {
-  const API_BASE = process.env.REACT_APP_API_BASE;
+  const API_BASE = process.env.REACT_APP_BASE_API_URL;
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API = `${API_BASE}/api/courses`;
+
   const findAllCourses = async () => {
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
@@ -27,10 +30,11 @@ function Kanbas() {
 
 
   const [course, setCourse] = useState({
-    _id: "0", name: "New Course", number: "New Number",
+    id: "0", name: "New Course", number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15",
     image: "/images/reactjs.jpg"
   });
+
   const addNewCourse = async () => {
     const response = await axios.post(COURSES_API, course);
     setCourses([ ...courses, response.data ]);
@@ -43,16 +47,16 @@ function Kanbas() {
     setCourses(courses.filter((course) => course._id !== courseId));
   };
 
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
+  const updateCourse = async () => {
+    const response = await axios.put(`${COURSES_API}/${course.id}`, course);
+		setCourses(
+			courses.map((c) => {
+				if (c._id === course.id) {
+					return course;
+				}
+				return c;
+			})
+		);
   };
    return (
     <Provider store={store}>

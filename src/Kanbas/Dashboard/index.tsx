@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line no-use-before-define
 function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCourse,  updateCourse }: {
     courses: 
-    {_id: string;
+    {id: string;
       name: string;
       number: string;
       startDate: string;
@@ -13,7 +13,7 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
       image: string;
     }[];
     course: {
-      _id: string;
+      id: string;
       name: string;
       number: string
       startDate: string;
@@ -21,7 +21,7 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
       image: string;
     };
     setCourse: (course: {
-      _id: string;
+      id: string;
       name: string;
       number: string;
       startDate: string;
@@ -61,17 +61,17 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
-            <div key={course._id} className="col" style={{ width: 300 }}>
+            <div key={course.id} className="col" style={{ width: 300 }}>
               <div className="card">
                 <img src={`images/${course.image}`} className="card-img-top" alt=""
                      style={{ height: 150 }}/>
                 <div className="card-body">
                   
-                  <Link className="list-group-item" to={`/Kanbas/Courses/${course._id}/Home`}>
+                  <Link className="list-group-item" to={`/Kanbas/Courses/${course.id}/Home`}>
                     {course.name}
                     <button onClick={(event) => {
                         event.preventDefault();
-                        deleteCourse(course._id);
+                        deleteCourse(course.id);
                       }}>
                       Delete
                    </button>
@@ -85,7 +85,7 @@ function Dashboard({   courses,  course,  setCourse,  addNewCourse,  deleteCours
                   </Link>
               
                   
-                      <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary">
+                      <Link to={`/Kanbas/Courses/${course.id}/Home`} className="btn btn-primary">
                         Go
                       </Link>
           
